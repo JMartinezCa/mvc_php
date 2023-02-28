@@ -1,0 +1,47 @@
+@use 'variables' as v;
+
+@mixin phone{
+    @media(min-width: v.$phone){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media(min-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media(min-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin desktopXL{
+    @media(min-width: v.$desktopXL){
+        @content;
+    }
+}
+
+@mixin gap($columns, $fraction, $gap){
+    gap: $gap;
+    display: grid;
+    grid-template-columns: repeat($columns, $fraction);
+}
+
+@mixin buttons($bg-color, $txt-color, $weight, $display){
+    display: $display;
+    color: $txt-color;
+    padding: 1rem 3rem;
+    text-align: center;
+    font-weight: $weight;
+    background-color: $bg-color;
+    margin-top: calc(v.$separation / 2);
+    border: none;
+
+    &:hover{
+        background-color: darken($bg-color, 5);
+        cursor: pointer;
+    }
+}

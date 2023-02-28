@@ -1,0 +1,5 @@
+# dependencies
+node_modules
+
+# composer vendor dir
+vendor
